@@ -1,14 +1,16 @@
 #include <iostream>
 #include <cmath>
 
-# define DEF_ERR = 1.0e-5
-# define DEF_MAX_N = 1.0e7
+#define DEF_ERR 1.0e-5
+#define DEF_MAX_N 1.0e7
+
+using namespace std;
 
 double f(double var) {
   return (var * var + 2);
 }
 
-double integralf(double a, double b, double error=DEF_ERR, max_n=DEF_MAX_N) {
+double integralf(double a, double b, double error=DEF_ERR, double max_n=DEF_MAX_N) {
   // Write the integration code here. Remove the next 2 lines.
   // Wrong code
   return ((b - a) * (f(a) + f(b)) / 2);
@@ -22,6 +24,6 @@ int main() {
   cin >> a;
   cout << "            to: ";
   cin >> b;
-  cout << "The result of the integral is = " << integralf(a, b);
+  cout << "The result of the integral is = " << integralf(a, b) << endl;
   return 0;
 }
