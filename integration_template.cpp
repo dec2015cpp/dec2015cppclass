@@ -5,7 +5,7 @@
 # define DEF_MAX_N = 1.0e7
 
 double f(double var) {
-  return (var * var + 1);
+  return (var * var + 2);
 }
 
 double integralf(double a, double b, double error=DEF_ERR, max_n=DEF_MAX_N) {
