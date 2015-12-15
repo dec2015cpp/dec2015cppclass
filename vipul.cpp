@@ -10,10 +10,19 @@ double f(double var) {
   return (var * var + 2);
 }
 
+double area(double var1,double var2){
+   return 0.5*(f(var1)+f(var2))*(var2-var1);
+}
+
 double integralf(double a, double b, double error=DEF_ERR, double max_n=DEF_MAX_N) {
-  // Write the integration code here. Remove the next 2 lines.
-  // Wrong code
-  return ((b - a) * (f(a) + f(b)) / 2);
+  int i;
+  float n,h,count;
+  count = 0;                             
+  n = 1048576;                          // no. of rectangles
+  h = (b-a)/n;                         // Represent width of the rectangle
+  for (i=1;i<n-1;i++) {
+  count += area(a+(i*h),a+(i+1)*h);}
+  return count;
 }
 
 int main() {
@@ -25,5 +34,6 @@ int main() {
   cout << "            to: ";
   cin >> b;
   cout << "The result of the integral is = " << integralf(a, b) << endl;
-  return 0;
+  
+  
 }
